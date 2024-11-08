@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-import os  # Import the os module to access environment variables
+import os
 
 # Read the token from the environment variable
 TOKEN = os.environ.get('DISCORD_BOT_TOKEN')
@@ -9,6 +9,7 @@ intents = discord.Intents.default()
 intents.members = True  # Required for member-related events
 intents.guilds = True
 intents.dm_messages = True  # Required to send DMs
+intents.presences = True  # Required to change the bot's status
 
 # Create an instance of the bot
 bot = commands.Bot(command_prefix='!', intents=intents)
@@ -16,6 +17,11 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 @bot.event
 async def on_ready():
     print(f'Logged in as {bot.user.name}')
+
+    # Set the custom status
+    custom_activity = discord.CustomActivity(name="This Bot Is Maintained By The Community")
+    await bot.change_presence(activity=custom_activity)
+
     try:
         # For global commands
         synced = await bot.tree.sync()
