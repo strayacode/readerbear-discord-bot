@@ -32,7 +32,7 @@ async def on_ready():
 @bot.event
 async def on_member_join(member):
     # Welcome message in the server using '#' for header
-    welcome_message = f'# Welcome To The 김치통, {member.mention}!'
+    welcome_message = f'# Welcome to Readerbear, {member.mention}!'
 
     # Send the message in the system channel or a default channel
     if member.guild.system_channel is not None:
@@ -47,17 +47,17 @@ async def on_member_join(member):
 
     # DM message to the new user using '#' for headers and channel IDs
     dm_message = f'''
-# Welcome To The 김치통, {member.name}!
+# Welcome to Readerbear, {member.name}!
 
-There's a ton to do on the Kimchi Reader Server.
+There's a ton to do on the Readerbear server.
 
-Feel free to hang out in <#1074278408483250228> to talk about Kimchi Reader or general topics related to Korean.
+Feel free to hang out in <#1291286450863734786> to talk about Readerbear or related topics such as Japanese.
 
-Do you have ideas that you wish to share with us? You can do so in the <#1078771225519718452> channel.
+Have feedback or ideas that you would like to share? You can do so in the <#1311826403351728128> and <#1291288995254374412> channels.
 
-If you'd like to get started with Kimchi Reader, check out our Quick Start Guide at: https://kimchi-reader.app/manual/getting-started
+We think feedback is highly valuable, and helps to make Readerbear as good as possible.
 
-Already subscribed to Kimchi Reader? Don't forget to link your Discord to Kimchi Reader to get a unique Discord role! See the instructions in <#1193162721085100042>.
+Enjoy!
 '''
 
     try:
