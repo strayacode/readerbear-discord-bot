@@ -19,7 +19,7 @@ async def on_ready():
     print(f'Logged in as {bot.user.name}')
 
     # Set the custom status
-    custom_activity = discord.CustomActivity(name="This Bot Is Maintained By The Community")
+    custom_activity = discord.CustomActivity(name="A cozy helper for Readerbear")
     await bot.change_presence(activity=custom_activity)
 
     try:
